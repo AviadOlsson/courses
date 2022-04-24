@@ -133,3 +133,48 @@ else:
 """
 
 #2.2-8
+"""
+tim, rus = input(), input()
+
+if rus == tim:
+    print('ничья')
+elif (rus == 'камень' and (tim == 'ножницы' or tim == 'ящерица')) or (rus == 'бумага' and (tim == 'камень' or tim == 'Спок')) or (rus == 'ножницы' and (tim == 'бумага' or tim == 'ящерица')) or (rus == 'ящерица' and (tim == 'бумага' or tim == 'Спок')) or (rus == 'Спок' and (tim == 'ножницы' or tim == 'камень')):
+    print('Руслан')
+else:
+    print('Тимур')
+"""
+
+#2.2-9
+"""
+result = input()
+
+counter = 0
+ht_counter = 0
+
+for i in range(len(result)):
+    if result[i] == 'Р':
+        counter += 1
+        if i + 1 == len(result):
+            if counter > ht_counter:
+                ht_counter = counter
+    elif result[i] == "О":
+        if counter > ht_counter:
+            ht_counter = counter
+            counter = 0
+        else:
+            counter = 0
+
+print(ht_counter)
+"""
+
+#2.2-10
+
+code_words_numbers = int(input())
+stroke_antone_word = []
+
+for i in range(code_words_numbers):
+    code_word = input()
+    if code_word.find("a") < code_word.find("n") < code_word.find("t") < code_word.find("o") and code_word[code_word.find("o"):].find("n"):
+        stroke_antone_word.append(i + 1) 
+
+print(*stroke_antone_word)
