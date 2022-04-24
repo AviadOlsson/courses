@@ -45,3 +45,31 @@ for i in range(len(list_of_numbers)):
     
 print(counter)
 """
+
+#2.2-2
+"""
+in_list = input().split(" ")
+out_list = []
+last_elem = []
+
+if len(in_list) % 2 != 0:
+    last_elem.append(in_list[-1])
+    del in_list[-1]
+
+for i in range(0, len(in_list), 2):
+    out_list.append(in_list[i + 1])
+    out_list.append(in_list[i])
+
+if len(last_elem) == 1:
+    out_list.append(last_elem[0])
+    print(" ".join(out_list))
+else:
+    print(" ".join(out_list))
+
+#Решение с помощью срезов
+
+in_list = input().split()
+for i in range(1, len(in_list), 2):
+    in_list[i], in_list[i - 1] = in_list[i - 1], in_list[i]
+print(*in_list)
+"""
