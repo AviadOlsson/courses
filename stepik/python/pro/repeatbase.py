@@ -46,7 +46,7 @@ for i in range(len(list_of_numbers)):
 print(counter)
 """
 
-#2.2-2
+#2.2-3
 """
 in_list = input().split(" ")
 out_list = []
@@ -73,3 +73,63 @@ for i in range(1, len(in_list), 2):
     in_list[i], in_list[i - 1] = in_list[i - 1], in_list[i]
 print(*in_list)
 """
+
+#2.2-4
+"""
+in_list = input().split()
+
+in_list[0], in_list[1:] = in_list[-1], in_list[0:-1]
+
+print(*in_list)
+"""
+
+#2.2-5
+"""
+in_list = input().split()
+
+counter = 0
+
+for i in range(len(in_list)):
+    if in_list[i] != in_list[i - 1]:
+        counter += 1
+
+if len(in_list) == 1:
+    counter = 1
+
+print(counter)
+"""
+
+#2.2-6
+"""
+yes_or_not = 'НЕТ'
+quantity = int(input())
+
+list_of_numbers = []
+
+for i in range(quantity):
+    list_of_numbers.append(int(input()))
+
+result_mult = int(input())
+if quantity < 2:
+    print('НЕТ')
+else:
+    for i in range(len(list_of_numbers)):
+        for j in range(len(list_of_numbers)):
+            if list_of_numbers[i] * list_of_numbers[j] == result_mult and j != i:
+                yes_or_not = 'ДА'
+    print(yes_or_not)
+"""
+
+#2.2-7
+"""
+tim, rus = input(), input()
+
+if rus == tim:
+    print('ничья')
+elif rus == 'камень' and tim == 'ножницы' or rus == 'бумага' and tim == 'камень' or rus == 'ножницы' and tim == 'бумага':
+    print('Руслан')
+else:
+    print('Тимур')
+"""
+
+#2.2-8
