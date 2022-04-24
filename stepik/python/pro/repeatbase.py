@@ -190,4 +190,22 @@ print(*stroke_key_word)
 """
 
 #2.2-10
+"""
+word = input() + ' запретил букву'
+alphabet = ['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
 
+word_result = word
+i = 0
+
+while len(word_result) != 0 and word_result != "  ":
+    
+    if word_result.find(alphabet[i]) >=0:
+        print(' '.join(word_result.split()) + " " + alphabet[i])
+        word_result = word_result.replace(alphabet[i], '')
+        i += 1
+    else:
+        i += 1
+        continue
+
+#диапазон русского алфавита в нижнем регистре в кодировке символов: alpha = [chr(i) for i in range(1072, 1104)]
+"""
