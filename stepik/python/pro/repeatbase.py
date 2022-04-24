@@ -168,13 +168,26 @@ print(ht_counter)
 """
 
 #2.2-10
+"""
+code_words_numbers = int(input())                               #Ожидаем количество строк для проверки
+key_letters = ['a', 'n', 't', 'o', 'n']                         #Список символов искомой последовательности по порядку
+stroke_key_word = []                                            #Список номеров строк, содержащих искомую последовательность
+counter = 0                                                     #Счетчик для проверки наличия последовательности в строке
 
-code_words_numbers = int(input())
-stroke_antone_word = []
+for i in range(code_words_numbers):                             #Цикл, количество итераций которого соответсвует количеству ожидаемых строк для проверки
+    code_word = input()                                         #Ожидаем строку для проверки в переменной
+    for j in key_letters:                                       #Цикл, который итерируюет каждый символ списка искомой последовательности
+        if code_word.find(j) >= 0:                              #Если искомый символ последовательности содержиться в строке
+            counter += 1                                        #Увеличиваем счетчик на 1
+            code_word = code_word[code_word.find(j) + 1:]       #В переменной code_word сохраняем срез исходной строки с индекса, следующего от найденного по символу последовательности
+    if counter == len(key_letters):                             #Если счетчик равен количеству символов искомой последовательности
+        stroke_key_word.append(i + 1)                           #Записываем номер строки в список номеров строк
+        counter = 0                                             #Обнуляем счетчик
+    else:                                                       #Если, счетик не соответствуюет количеству символов искомой последовательности
+        counter = 0                                             #Обнуляем счетчик
 
-for i in range(code_words_numbers):
-    code_word = input()
-    if code_word.find("a") < code_word.find("n") < code_word.find("t") < code_word.find("o") and code_word[code_word.find("o"):].find("n"):
-        stroke_antone_word.append(i + 1) 
+print(*stroke_key_word)
+"""
 
-print(*stroke_antone_word)
+#2.2-10
+
