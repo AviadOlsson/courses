@@ -209,3 +209,4 @@ while len(word_result) != 0 and word_result != "  ":
 
 #диапазон русского алфавита в нижнем регистре в кодировке символов: alpha = [chr(i) for i in range(1072, 1104)]
 """
+
