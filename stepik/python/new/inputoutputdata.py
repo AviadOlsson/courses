@@ -63,8 +63,8 @@
 #print(survivors // 2 + survivors % 2)
 
 #2.5-5
-#seat_number = int(input())
-#print(seat_number // 4 + 1)
+#a = int(input())
+#print((a + 4 - 1) // 4)
 
 #2.5-6
 #minutes = int(input())
