@@ -154,3 +154,92 @@ def matrix_generator_fast(len_of_row):
 
 print(*matrix_generator_fast(int(input())), sep='\n')
 """
+
+#4.3-2
+"""
+def matrix_generator_fast(len_of_row):
+    list1 = [[j for j in range(1, i + 1)] for i in range(1, len_of_row + 1)] 
+    return list1
+
+print(*matrix_generator_fast(int(input())), sep='\n')
+"""
+
+#4.3-3
+"""
+def factorial(number):
+    result = 1
+    for i in range(1, number + 1):
+        result *= i
+    return result
+
+def elem_of_triangle_of_pascal(number_row, number_elem_of_row):
+    factorial_nr = factorial(number_row)
+    factorial_neor = factorial(number_elem_of_row)
+    factorial_diff = factorial(number_row - number_elem_of_row)
+    return factorial_nr / (factorial_neor * factorial_diff)
+
+def row_of_triangle_of_pascal(number):
+    row_result = []
+    for i in range(number + 1):
+        row_result.append(int(elem_of_triangle_of_pascal(number, i)))
+    return row_result
+
+print(row_of_triangle_of_pascal(int(input())))
+"""
+#Решение через одну функцию
+"""
+def pascal(n):
+    triangle = [[1]]
+    
+    for i in range(n):
+        row = [1]
+        for j in range(1, len(triangle[i])):
+            row += [sum(triangle[i][j - 1: j + 1])]
+        row += [1]
+        triangle.append(row.copy())
+        
+    return triangle[n]
+
+print(pascal(int(input())))
+"""
+
+#4.3-4
+"""
+def pascal(n):
+    triangle = [[1]]
+    
+    for i in range(n - 1):
+        row = [1]
+        for j in range(1, len(triangle[i])):
+            row += [sum(triangle[i][j - 1: j + 1])]
+        row += [1]
+        triangle.append(row.copy())
+        
+    return triangle
+
+triangle = pascal(int(input()))
+
+for i in range(len(triangle)):
+    print(*triangle[i])
+"""
+
+list1 = ['a', 'b', 'c', 'd']
+list2 = ['a', 'a', 'b', 'b', 'b', 'c', 'c', 'c']
+nested_list = []
+container = []
+
+for i in range(len(list2)):
+    if i == 0:
+        container.append(list2[i])
+        if list2[i] == list2[i + 1]:
+            continue
+        else:
+            nested_list.append(container)
+            container = []
+    elif list2[i] == list2[i - 1] or list2[i] == list2[i + 1]:
+        container.append(list2[i])
+    else:
+        nested_list.append(container)
+        container = []
+         
+print(nested_list)
