@@ -116,3 +116,26 @@ def super_del_list_sum(any_list):
 
 print(super_del_list_sum(list1))
 """
+
+# функция для генерации вложенных списков заданных диапазонов
+"""
+def generator_nested_list(len_of_list, len_element_of_list):
+
+    my_list = [[0] * len_element_of_list for _ in range(len_of_list)]
+
+    return my_list
+
+print(generator_nested_list(5, 3))
+"""
+
+#4.3-1
+
+number = int(input())
+
+my_list = []
+
+for i in range(number):
+    for j in range(number):
+        my_list[i].append(j)
+
+print(my_list)
