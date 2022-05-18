@@ -129,13 +129,28 @@ print(generator_nested_list(5, 3))
 """
 
 #4.3-1
+"""
+def matrix_generator(number):
 
-number = int(input())
+    my_list = []
 
-my_list = []
+    for i in range(number):
+        my_list.append([])
+        for j in range(1, number + 1):
+            my_list[i].append(j)
 
-for i in range(number):
-    for j in range(number):
-        my_list[i].append(j)
+    return my_list
 
-print(my_list)
+my_list = matrix_generator(int(input()))
+
+for i in range(len(my_list)):
+    print(my_list[i])
+"""
+#решение с помощью генератора  (!С помощью * перед списком, можно раскрыть список и вывести его элементы в формате строки)
+"""
+def matrix_generator_fast(len_of_row):
+    list1 = [[j for j in range(1, len_of_row + 1)] for i in range(1, len_of_row + 1)] 
+    return list1
+
+print(*matrix_generator_fast(int(input())), sep='\n')
+"""
