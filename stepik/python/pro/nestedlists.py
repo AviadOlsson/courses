@@ -223,23 +223,63 @@ for i in range(len(triangle)):
     print(*triangle[i])
 """
 
-list1 = ['a', 'b', 'c', 'd']
-list2 = ['a', 'a', 'b', 'b', 'b', 'c', 'c', 'c']
-nested_list = []
-container = []
+#4.3-5
+"""
+def new_list(any_list):
 
-for i in range(len(list2)):
-    if i == 0:
-        container.append(list2[i])
-        if list2[i] == list2[i + 1]:
-            continue
+    nested_list = []
+    container = []
+
+    for i in range(len(any_list)):
+        if i == 0:
+            container.append(any_list[i])
+        elif container[0] == any_list[i]:
+            if i == len(any_list) - 1:
+                container.append(any_list[i])
+                nested_list.append(container)
+            else:
+                container.append(any_list[i])
         else:
             nested_list.append(container)
             container = []
-    elif list2[i] == list2[i - 1] or list2[i] == list2[i + 1]:
-        container.append(list2[i])
-    else:
-        nested_list.append(container)
-        container = []
+            if i == len(any_list) - 1:
+                container.append(any_list[i])
+                nested_list.append(container)
+            else:
+                container.append(any_list[i])
+
+    return nested_list
          
-print(nested_list)
+print(new_list(input().split()))
+"""
+#Компактное решение
+"""
+def compack_list(any_list):
+
+    res = []
+
+    for el in any_list:
+        if res and el in res[-1]:
+            res[-1].append(el)
+        else:
+            res.append([el])
+    
+    return res
+
+print(compack_list(input().split()))
+"""
+#4.3-6
+"""
+def chunked(any_stroke, size_of_chunk):
+
+    chunks = []
+    list_of_stroke = any_stroke.split()
+
+    for i in range(0, len(list_of_stroke), size_of_chunk):
+        chunks.append(list_of_stroke[i:i + size_of_chunk])
+
+
+    return chunks
+
+print(chunked(input(), int(input())))
+"""
