@@ -283,3 +283,24 @@ def chunked(any_stroke, size_of_chunk):
 
 print(chunked(input(), int(input())))
 """
+
+#4.3-7
+"""
+def wtf_list(any_list):
+
+    nested_list = [[]]
+
+    keeper = []
+
+    for i in range(len(any_list)):
+        for j in range(len(any_list)):
+            keeper = any_list[j:i+j+1]
+            if len(keeper) == i + 1:
+                nested_list.append(keeper)
+
+
+    return nested_list
+
+print(wtf_list(input().split()))
+"""
+
