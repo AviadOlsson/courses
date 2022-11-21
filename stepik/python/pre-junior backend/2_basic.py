@@ -93,10 +93,68 @@ third_number(number)
 """
 
 #2.6
-
+"""
 float_number = input()
 
-def two_number_after_dot(input_n):
-    return print(int(input_n) % 100)
+def second_number_after_dot(input_n):
+    return print(str(float(input_n) % 1)[3])
 
-two_number_after_dot(float_number)
+second_number_after_dot(float_number)
+"""
+
+#2.7
+"""
+a, b, n = int(input()), int(input()), int(input())
+
+def avarage_time_on_site(minutes, seconds, days):
+    all_times_on_site = days * ((minutes * 60) + seconds)
+    return print((all_times_on_site // 60) // 60, (all_times_on_site // 60) % 60 ,all_times_on_site % 60)
+
+avarage_time_on_site(a, b, n)
+"""
+
+#2.8
+"""
+import math
+
+a, b, c = float(input()), float(input()), float(input())
+
+def sum_all_float(y, x, z):
+    return print(math.fsum((y, x, z)))
+
+sum_all_float(a, b, c)
+"""
+
+#2.9
+"""
+import math
+
+a, b = int(input()), int(input())
+
+def search_gcd(y, x):
+    return print(math.gcd(y, x))
+
+search_gcd(a, b)
+"""
+"""
+print(13 << 2 >> 1)
+Приколюха с шифрованием
+
+Шифрование:
+
+число ^ ключ = шифрованное число
+
+Дешифрование:
+
+шифрованное число ^ ключ = число
+"""
+
+#2.10
+"""
+encrypted_value = int(input())
+
+def decoder(x):
+    return print(x ^ 47)
+
+decoder(encrypted_value)
+"""
