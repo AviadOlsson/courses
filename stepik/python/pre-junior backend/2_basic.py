@@ -160,9 +160,8 @@ decoder(encrypted_value)
 """
 
 #2.11
+"""
 number = int(input())
-
-print(len(str(number)) != 3 )
 
 def chek_condition(number_for_chek):
     f1, f2, f3, f4, f5 = True, True, False, False, False
@@ -180,15 +179,83 @@ def chek_condition(number_for_chek):
         f4 = True
 
     if number_for_chek < 0:
-        f5 = len(str(number_for_chek)) * -1 == 3
+        if len(str(number_for_chek * -1)) == 3:
+            f5 = True
     elif len(str(number_for_chek)) == 3:
         f5 = True
 
     return print(f1, f2, f3, f4, f5, sep="\n")
 
 chek_condition(number)
+"""
+
+#2.12
+"""
+ip_adress = input()
+
+def check_status_ip(input_ip):
+
+    ip_list_string = input_ip.split('.')
+    status = True
+
+    for i in range(len(ip_list_string)):
+        if 0 <= int(ip_list_string[i]) <= 255:
+            status = True
+        else:
+            status = False
+            break
+
+    if ip_list_string[0] == ip_list_string[1] == ip_list_string[2] == ip_list_string[3] == "0" or ip_list_string[0] == ip_list_string[1] == ip_list_string[2] == ip_list_string[3] == "255":
+        status = False
+
+    return print(status)
+
+check_status_ip(ip_adress)
+"""
+#######################################################
+#      Шпора по тернарному и маржовому оператору      #
+#######################################################
+"""
+x = int(input())
+y = x // 2 if x % 2 == 0 else x * 2
 
 
+if (x := int(input())) % 2 == 0:
+    print(x ** 2 + 5)
+else:
+    print(x ** 3 - 7)
+"""
 
+#2.13
+"""
+days = int(input())
 
+def day_of_week(number):
+    
+    list_names = "пн/вт/ср/чт/пт/сб/вс".split('/')
 
+    if number < 7:
+        return print(list_names[number])
+    elif number % 7 > 7:
+        return print(list_names[number % 7 - 7])
+    else:
+        return print(list_names[number % 7])
+
+day_of_week(days)
+"""
+
+#2.14
+"""
+a, b, c = int(input()), int(input()), int(input())
+
+def minimal_value(n1, n2, n3):
+
+    if n1 <= n2 <= n3 or n1 <= n3 <= n2:
+        print(n1)
+    elif n2 <= n1 <= n3 or n2 <= n3 <= n2:
+        print(n2)
+    elif n3 <= n1 <= n3 or n3 <= n3 <= n1:
+        print(n3)
+
+minimal_value(a, b, c)
+"""
