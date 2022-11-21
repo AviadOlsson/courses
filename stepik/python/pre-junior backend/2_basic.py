@@ -158,3 +158,37 @@ def decoder(x):
 
 decoder(encrypted_value)
 """
+
+#2.11
+number = int(input())
+
+print(len(str(number)) != 3 )
+
+def chek_condition(number_for_chek):
+    f1, f2, f3, f4, f5 = True, True, False, False, False
+    
+    if number_for_chek % 2 != 0:
+        f1 = False
+    
+    if number_for_chek < 0:
+        f2 = False
+
+    if -5 <= number_for_chek <= 5:
+        f3 = True
+    
+    if number_for_chek % 3 == 0 and number_for_chek % 4 == 0 and number_for_chek % 7 != 0:
+        f4 = True
+
+    if number_for_chek < 0:
+        f5 = len(str(number_for_chek)) * -1 == 3
+    elif len(str(number_for_chek)) == 3:
+        f5 = True
+
+    return print(f1, f2, f3, f4, f5, sep="\n")
+
+chek_condition(number)
+
+
+
+
+
