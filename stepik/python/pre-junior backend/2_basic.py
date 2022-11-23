@@ -274,13 +274,78 @@ def validation_accaunt(log, pas):
 validation_accaunt(login, password)
 """
 
-command = "print"
-argument = "hello"
+#2.15
+"""
+user_command = input()
 
-match command:
-    case "print":
-        print(argument)
-    case "decorate":
-        print("decorated", argument)
-    case _:  # аналог else с использованием анонимной переменной (переменная принимает любое значение)
-        print("error")
+def bot_answer(command):
+
+    match command:
+        case "Привет":
+            return print("Привет!")
+        case "Как дела?":
+            return print("Все классно!")
+        case "Пока":
+            return print("До скорой встречи!")
+        case _:
+            return print("Прости, я еще не знаю таких фраз :(")
+
+bot_answer(user_command)
+"""
+
+#2.16
+"""
+name_of_framework = input()
+
+def definition_prof(framework):
+
+    match framework:
+        case "Flask" | "Django" | "Fast-API":
+            return print(f"Python({framework}),Backend-dev")
+        case "Angular" | "React" | "Vue":
+            return print(f"JavaScript/TypeScript({framework}),Frontend-dev")
+        case "Flutter" | "React Native":
+            return print(f"JavaScript({framework}),Cross-Mobile-dev")
+        case "Pandas" | "skit-learn" | "keras":
+            return print(f"Python({framework}),Data-Scientist")
+        case _:
+            return print("модель еще не обучена")
+
+definition_prof(name_of_framework)
+"""
+
+#############################
+#       Раздел "Циклы"      #
+#############################
+
+#2.17
+"""
+a = [print(int(i)) for i in input().split()]
+"""
+
+#2.18
+"""
+value_factorial = int(input())
+
+def factorial_calculation(desired_value):
+
+    factorial = 1
+
+    for i in range(1, desired_value + 1):
+        factorial *= i
+
+    return print(factorial)
+
+factorial_calculation(value_factorial)
+"""
+
+#2.19
+
+for i in range(1, 3):
+    for j in range(2, 2):
+        for k in range(3, 5):
+            print(k)
+    for b in range(3,4):
+        for z in range(5,3):
+            print(z)
+    print(i)
