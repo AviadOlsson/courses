@@ -259,3 +259,28 @@ def minimal_value(n1, n2, n3):
 
 minimal_value(a, b, c)
 """
+
+#2.15
+"""
+login, password = input(), input()
+
+def validation_accaunt(log, pas):
+
+    if len(log) > 4 and len(pas) > 8 and log != pas:
+        return print(True)
+    else:
+        return print(False)
+
+validation_accaunt(login, password)
+"""
+
+command = "print"
+argument = "hello"
+
+match command:
+    case "print":
+        print(argument)
+    case "decorate":
+        print("decorated", argument)
+    case _:  # аналог else с использованием анонимной переменной (переменная принимает любое значение)
+        print("error")
