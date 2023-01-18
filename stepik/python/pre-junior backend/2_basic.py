@@ -341,11 +341,3 @@ factorial_calculation(value_factorial)
 
 #2.19
 
-for i in range(1, 3):
-    for j in range(2, 2):
-        for k in range(3, 5):
-            print(k)
-    for b in range(3,4):
-        for z in range(5,3):
-            print(z)
-    print(i)
