@@ -17,6 +17,7 @@
 # Реализация на JavaScript известных функций из Python
 
 ```JavaScript
+
 input = prompt
 
 print = (...args) => console.log(...args)
